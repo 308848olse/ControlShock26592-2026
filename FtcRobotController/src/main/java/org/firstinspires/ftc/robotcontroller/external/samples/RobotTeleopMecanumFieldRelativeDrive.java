@@ -85,8 +85,7 @@ public class RobotTeleopMecanumFieldRelativeDrive extends OpMode {
         // This needs to be changed to match the orientation on your robot
         RevHubOrientationOnRobot.LogoFacingDirection logoDirection =
                 RevHubOrientationOnRobot.LogoFacingDirection.UP;
-        RevHubOrientationOnRobot.UsbFacingDirection usbDirection =
-                RevHubOrientationOnRobot.UsbFacingDirection.FORWARD;
+        RevHubOrientationOnRobot.UsbFacingDirection usbDirection = RevHubOrientationOnRobot.UsbFacingDirection.FORWARD;
 
         RevHubOrientationOnRobot orientationOnRobot = new
                 RevHubOrientationOnRobot(logoDirection, usbDirection);
