@@ -1,19 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
-
-import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.HardwareDevice;
 import com.qualcomm.robotcore.hardware.IMU;
-import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name = "Robot: Field Relative Mecanum Drive", group = "Robot")
-public class Telep extends OpMode {
+public class Teleop extends OpMode {
     // This declares the four motors needed
     DcMotor backLeftDrive ;
     DcMotor backRightDrive;
@@ -38,7 +32,6 @@ public class Telep extends OpMode {
         backLeftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         backRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-
     }
 
     @Override
@@ -50,16 +43,18 @@ public class Telep extends OpMode {
 
         if (gamepad1.left_bumper) {
             //(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
-            
+
         } else {
 
         }
 
+        float control_v = gamepad1.left_stick_y;
+        float control_h = gamepad1.left_stick_x;
 
-//        backLeftDrive.setPower(gamepad1.left_stick_y);
-//        backRightDrive.setPower(gamepad1.right_stick_x);
-//        frontLeftDrive.setPower(gamepad1.left_stick_y);
-//        frontRightDrive.setPower(gamepad1.right_trigger);
+        backLeftDrive.setPower(control_v - control_h);
+        backRightDrive.setPower(control_v + control_h);
+        frontLeftDrive.setPower(control_v + control_h);
+        frontRightDrive.setPower(control_v - control_h);
 
 
     }
