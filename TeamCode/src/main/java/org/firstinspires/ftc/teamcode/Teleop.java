@@ -6,6 +6,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.IMU;
 
+import org.firstinspires.ftc.ftccommon.internal.manualcontrol.commands.MotorCommands;
+
 @TeleOp(name = "Robot: Field Relative Mecanum Drive", group = "Robot")
 public class Teleop extends OpMode {
     // This declares the four motors needed
@@ -51,11 +53,10 @@ public class Teleop extends OpMode {
         float control_v = gamepad1.left_stick_y;
         float control_h = gamepad1.left_stick_x;
 
-        backLeftDrive.setPower(control_v - control_h);
-        backRightDrive.setPower(control_v + control_h);
-        frontLeftDrive.setPower(control_v + control_h);
-        frontRightDrive.setPower(control_v - control_h);
-
+        backLeftDrive.setPower(0.4 * (-control_v - control_h));
+        backRightDrive.setPower(0.4 * (-control_v + control_h));
+        frontLeftDrive.setPower(0.4 * (control_v - control_h));
+        frontRightDrive.setPower(0.4 * (control_v + control_h));
 
     }
 
