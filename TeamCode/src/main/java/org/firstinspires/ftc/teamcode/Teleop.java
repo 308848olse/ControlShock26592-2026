@@ -53,10 +53,10 @@ public class Teleop extends OpMode {
         float control_v = gamepad1.left_stick_y;
         float control_h = gamepad1.left_stick_x;
 
-        backLeftDrive.setPower(0.4 * (-control_v - control_h));
-        backRightDrive.setPower(0.4 * (-control_v + control_h));
-        frontLeftDrive.setPower(0.4 * (control_v - control_h));
-        frontRightDrive.setPower(0.4 * (control_v + control_h));
+        backLeftDrive.setPower(0.4 * ((-control_v - control_h) + gamepad1.right_stick_x));
+        backRightDrive.setPower(0.4 * ((-control_v + control_h) - gamepad1.right_stick_x));
+        frontLeftDrive.setPower(0.4 * ((control_v - control_h) - gamepad1.right_stick_x));
+        frontRightDrive.setPower(0.4 * ((control_v + control_h) + gamepad1.right_stick_x));
 
     }
 
