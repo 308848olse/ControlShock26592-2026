@@ -10,7 +10,6 @@ import org.firstinspires.ftc.ftccommon.internal.manualcontrol.commands.MotorComm
 
 @TeleOp(name = "TeleOp", group = "Robot")
 public class Teleop extends OpMode {
-    // This declares the four motors needed
     DcMotor backLeftDrive ;
     DcMotor backRightDrive;
     DcMotor frontLeftDrive;
