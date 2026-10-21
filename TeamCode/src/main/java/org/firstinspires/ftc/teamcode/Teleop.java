@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.IMU;
 
 import org.firstinspires.ftc.ftccommon.internal.manualcontrol.commands.MotorCommands;
 
-@TeleOp(name = "TeleOp", group = "Robot")
+@TeleOp(name = "Robot: Field Relative Mecanum Drive", group = "Robot")
 public class Teleop extends OpMode {
     DcMotor backLeftDrive ;
     DcMotor backRightDrive;
