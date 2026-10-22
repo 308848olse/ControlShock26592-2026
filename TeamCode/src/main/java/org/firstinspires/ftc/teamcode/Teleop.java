@@ -42,10 +42,24 @@ public class Teleop extends OpMode {
         telemetry.addLine("The left joystick sets the robot direction");
         telemetry.addLine("Moving the right joystick left and right turns the robot");
 
+<<<<<<< Updated upstream:TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Teleop.java
         float control_y = gamepad1.left_stick_y;
         float control_x = gamepad1.left_stick_x;
         float rotation = gamepad1.right_stick_x;
         float control_speed = gamepad1.left_trigger;
+=======
+        if (gamepad1.left_bumper) {
+            drive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
+        } else {
+            driverFieldRelative(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
+
+        }
+
+        backLeftDrive.setPower(gamepad1.left_stick_y);
+        backRightDrive.setPower(gamepad1.right_stick_x);
+        frontLeftDrive.setPower(gamepad1.left_stick_y);
+        frontRightDrive.setPower(gamepad1.right_trigger);
+>>>>>>> Stashed changes:TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Telep.java
 
         backLeftDrive.setPower(control_speed * (-control_y - control_x + rotation));
         backRightDrive.setPower(control_speed * (-control_y + control_x - rotation));
@@ -54,6 +68,11 @@ public class Teleop extends OpMode {
 
     }
 
+    private void drive(float v, float leftStickX, float rightStickX) {
+    }
+
+    private void driverFieldRelative(float v, float leftStickX, float rightStickX) {
+    }
 
 
 }
