@@ -37,6 +37,7 @@ public class Teleop extends OpMode {
 
     @Override
     public void loop() {
+        //This part of the code sends sentences to the driver hub
         telemetry.addLine("Press A to reset Yaw");
         telemetry.addLine("Hold left bumper to drive in robot relative");
         telemetry.addLine("The left joystick sets the robot direction");
