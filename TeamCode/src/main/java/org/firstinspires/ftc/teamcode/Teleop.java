@@ -14,6 +14,7 @@ public class Teleop extends OpMode {
     DcMotor backRightDrive;
     DcMotor frontLeftDrive;
     DcMotor frontRightDrive;
+    DcMotor intake;
 
     // This declares the IMU needed to get the current direction the robot is facing
     IMU imu;
@@ -24,6 +25,7 @@ public class Teleop extends OpMode {
         backRightDrive = hardwareMap.get(DcMotor.class, "BRmotor");
         frontLeftDrive = hardwareMap.get(DcMotor.class, "FLmotor");
         frontRightDrive = hardwareMap.get(DcMotor.class, "FRmotor");
+        intake = hardwareMap.get(DcMotor.class, "Intake");
 
         backLeftDrive.setDirection(DcMotorSimple.Direction.REVERSE);
         frontLeftDrive.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -32,6 +34,7 @@ public class Teleop extends OpMode {
         frontRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         backLeftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         backRightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        intake.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
     }
 
@@ -47,11 +50,13 @@ public class Teleop extends OpMode {
         float control_x = gamepad1.left_stick_x;
         float rotation = gamepad1.right_stick_x;
         float control_speed = gamepad1.left_trigger;
+        float intake_power = gamepad2.left_trigger;
 
         backLeftDrive.setPower(control_speed * (-control_y - control_x + rotation));
         backRightDrive.setPower(control_speed * (-control_y + control_x - rotation));
         frontLeftDrive.setPower(control_speed * (control_y - control_x - rotation));
         frontRightDrive.setPower(control_speed * (control_y + control_x + rotation));
+        intake.setPower(-intake_power);
 
     }
 }
