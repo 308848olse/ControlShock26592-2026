@@ -27,7 +27,7 @@ public class  RedAutoMode extends LinearOpMode {
         backLeftDrive.setDirection(DcMotor.Direction.REVERSE);
         backLeftDrive.setPower(1);
         backRightDrive.setPower(-1);
-        sleep(11000);
+        sleep(1000);
         backLeftDrive.setPower(0);
         backRightDrive.setPower(0);
         sleep(1000);
