@@ -24,18 +24,20 @@ public class  RedAutoMode extends LinearOpMode {
 
         waitForStart();
 
-        backLeftDrive.setDirection(DcMotor.Direction.REVERSE);
+        backLeftDrive.setPower(1);
+        backRightDrive.setPower(0.25);
+        frontLeftDrive.setPower(0.25);
+        frontRightDrive.setPower(1);
+        sleep(1000);
         backLeftDrive.setPower(1);
         backRightDrive.setPower(-1);
+        frontLeftDrive.setPower(1);
+        frontRightDrive.setPower(-1);
         sleep(1000);
         backLeftDrive.setPower(0);
         backRightDrive.setPower(0);
-        sleep(1000);
-        backLeftDrive.setPower(-1);
-        backRightDrive.setPower(1);
-        sleep(1000);
-        backLeftDrive.setPower(0);
-        backRightDrive.setPower(0);
+        frontLeftDrive.setPower(0);
+        frontRightDrive.setPower(0);
         while (opModeIsActive())
             frontRightDrive.setDirection(DcMotor.Direction.FORWARD);
             backLeftDrive.setDirection(DcMotor.Direction.REVERSE);
