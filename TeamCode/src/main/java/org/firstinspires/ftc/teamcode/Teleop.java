@@ -50,13 +50,13 @@ public class Teleop extends OpMode {
         float control_x = gamepad1.left_stick_x;
         float rotation = gamepad1.right_stick_x;
         float control_speed = gamepad1.left_trigger;
-        float intake_power = gamepad2.left_trigger;
+        float intake_speed = gamepad2.left_trigger;
 
         backLeftDrive.setPower(control_speed * (-control_y - control_x + rotation));
         backRightDrive.setPower(control_speed * (-control_y + control_x - rotation));
         frontLeftDrive.setPower(control_speed * (control_y - control_x - rotation));
         frontRightDrive.setPower(control_speed * (control_y + control_x + rotation));
-        intake.setPower(-intake_power);
+        intake.setPower(-intake_speed);
 
     }
 }
