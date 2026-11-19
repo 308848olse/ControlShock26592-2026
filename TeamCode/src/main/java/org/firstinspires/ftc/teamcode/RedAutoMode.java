@@ -1,5 +1,5 @@
 package org.firstinspires.ftc.teamcode;
-
+//lolaisthebestcaptianeverrrrr
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -24,16 +24,16 @@ public class  RedAutoMode extends LinearOpMode {
 
         waitForStart();
 
-        backLeftDrive.setPower(1);
-        backRightDrive.setPower(0.25);
-        frontLeftDrive.setPower(0.25);
-        frontRightDrive.setPower(1);
-        sleep(1000);
-        backLeftDrive.setPower(1);
+        backLeftDrive.setPower(-1);
+        backRightDrive.setPower(0.12);
+        frontLeftDrive.setPower(0.12);
+        frontRightDrive.setPower(-1);
+        sleep(1600);
+        backLeftDrive.setPower(-1);
         backRightDrive.setPower(-1);
         frontLeftDrive.setPower(1);
-        frontRightDrive.setPower(-1);
-        sleep(1000);
+        frontRightDrive.setPower(1);
+        sleep(255);
         backLeftDrive.setPower(0);
         backRightDrive.setPower(0);
         frontLeftDrive.setPower(0);
