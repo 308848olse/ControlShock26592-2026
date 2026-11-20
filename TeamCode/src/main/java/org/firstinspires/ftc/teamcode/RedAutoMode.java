@@ -33,7 +33,7 @@ public class  RedAutoMode extends LinearOpMode {
         backRightDrive.setPower(-1);
         frontLeftDrive.setPower(1);
         frontRightDrive.setPower(1);
-        sleep(255);
+        sleep(250);
         backLeftDrive.setPower(0);
         backRightDrive.setPower(0);
         frontLeftDrive.setPower(0);
